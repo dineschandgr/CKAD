@@ -1,0 +1,147 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2021-03-18T14:04:18Z"
+  labels:
+    app: v2
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app: {}
+      f:spec:
+        f:containers:
+          k:{"name":"nginx2"}:
+            .: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:terminationGracePeriodSeconds: {}
+    manager: kubectl.exe
+    operation: Update
+    time: "2021-03-18T14:04:18Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"10.1.1.165"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2021-03-18T14:04:24Z"
+  name: nginx2
+  namespace: default
+  resourceVersion: "1664308"
+  selfLink: /api/v1/namespaces/default/pods/nginx2
+  uid: 8fc5a39b-b16c-4a8a-9d69-57aa29aae7a6
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: Always
+    name: nginx2
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-m8z2h
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: docker-desktop
+  priority: 0
+  restartPolicy: Never
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-m8z2h
+    secret:
+      defaultMode: 420
+      secretName: default-token-m8z2h
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2021-03-18T14:04:18Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2021-03-18T14:04:24Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2021-03-18T14:04:24Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2021-03-18T14:04:18Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://1f1900c8c822dab8e309a26f97a18ddf0e9bbe4661d76d8ceb72b50964bb8df1
+    image: nginx:latest
+    imageID: docker-pullable://nginx@sha256:d2925188effb4ddca9f14f162d6fba9b5fab232028aa07ae5c1dab764dca8f9f
+    lastState: {}
+    name: nginx2
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2021-03-18T14:04:23Z"
+  hostIP: 192.168.65.3
+  phase: Running
+  podIP: 10.1.1.165
+  podIPs:
+  - ip: 10.1.1.165
+  qosClass: BestEffort
+  startTime: "2021-03-18T14:04:18Z"

@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  creationTimestamp: null
+  name: throw-dice-job
+spec:
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: kodecloud/throw-dice
+        name: throw-dice-job
+        resources: {}
+      restartPolicy: Never
+  backoffLimit: 4    
+  completions: 3
+  parallelism: 3
+status: {}
